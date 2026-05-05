@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+body{
+  background: #070b1a;
+  overflow: hidden;
+  color: white;
+}
+
+/* الخلفية */
+
+.background{
+  position: fixed;
+  inset: 0;
+
+  background:
+  radial-gradient(circle at top left,#00c3ff33,transparent 30%),
+  radial-gradient(circle at bottom right,#7a00ff33,transparent 30%),
+  linear-gradient(135deg,#070b1a,#0f172a);
+
+  z-index: -1;
+}
+
+/* الهيدر */
+
+header{
+  width: 100%;
+  padding: 25px 8%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+
+  backdrop-filter: blur(10px);
+
+  background: rgba(255,255,255,0.04);
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+
+  z-index: 1000;
+}
+
+.logo{
+  font-size: 30px;
+  font-weight: 900;
+
+  background: linear-gradient(90deg,#00c3ff,#7a00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav{
+  display: flex;
+  gap: 30px;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+
+  transition: 0.4s;
+}
+
+nav a:hover{
+  color: #00c3ff;
+}
+
+/* الواجهة */
+
+.hero{
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+.hero h1{
+  font-size: 70px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(90deg,#ffffff,#00c3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p{
+  font-size: 22px;
+  color: #cbd5e1;
+
+  margin-bottom: 40px;
+}
+
+/* الزر */
+
+.btn{
+  padding: 18px 45px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+  color: white;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  background: linear-gradient(90deg,#00c3ff,#7a00ff);
+
+  box-shadow:
+  0 0 20px #00c3ff66,
+  0 0 40px #7a00ff66;
+
+  transition: 0.4s;
+}
+
+.btn:hover{
+  transform: scale(1.08);
+
+  box-shadow:
+  0 0 30px #00c3ff,
+  0 0 60px #7a00ff;
+}
