@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Clean Robot Vehicle</title>
+<title>Robot Vehicle with Dark Smoke</title>
 
 <style>
   body {
@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
 
   .vehicle {
@@ -20,6 +21,50 @@
     height: 170px;
   }
 
+  /* --- تأثير الدخان الداكن --- */
+  .smoke-container {
+    position: absolute;
+    left: 192px; /* تم تعديله ليتوسط المدخنة */
+    bottom: 240px; /* مكان خروج الدخان */
+    width: 20px;
+    height: 100px;
+  }
+
+  .smoke {
+    position: absolute;
+    bottom: 0;
+    width: 18px; /* تكبير الحجم قليلاً */
+    height: 18px;
+    /* --- تعديل اللون: رمادي داكن جداً وشبه معتم --- */
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 50%;
+    opacity: 0;
+    filter: blur(4px); /* تقليل التغبيش قليلاً ليظل داكناً */
+    animation: rise 2s infinite ease-out;
+  }
+
+  /* جعل جزيئات الدخان تخرج بتوقيتات وأماكن مختلفة قليلاً */
+  .smoke:nth-child(2) { animation-delay: 0.6s; left: 6px; }
+  .smoke:nth-child(3) { animation-delay: 1.2s; left: -4px; }
+  .smoke:nth-child(4) { animation-delay: 1.8s; left: 2px; } /* إضافة جزئ رابع */
+
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0;
+    }
+    15% {
+      /* يظهر الدخان بسرعة ويكون داكناً جداً */
+      opacity: 1;
+    }
+    100% {
+      /* يرتفع، يكبر حجمه، ويتلاشى */
+      transform: translateY(-150px) scale(5);
+      opacity: 0;
+    }
+  }
+
+  /* --- باقي عناصر السيارة (دون تغيير) --- */
   .body {
     position: absolute;
     bottom: 28px;
@@ -29,6 +74,7 @@
     border: 4px solid #3f3f3f;
     border-radius: 42px 42px 28px 28px;
     box-shadow: 0 18px 30px rgba(0,0,0,0.25);
+    z-index: 2;
   }
 
   .body::after {
@@ -52,6 +98,7 @@
     border: 4px solid #3f3f3f;
     border-radius: 34px 46px 24px 24px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    z-index: 1;
   }
 
   .cabin::after {
@@ -77,6 +124,7 @@
     background: linear-gradient(90deg, #111, #333, #111);
     border-radius: 12px;
     border: 4px solid #111;
+    z-index: 0;
   }
 
   .pipe::before {
@@ -88,17 +136,6 @@
     height: 24px;
     background: #111;
     border-radius: 14px;
-  }
-
-  .pipe::after {
-    content: "";
-    position: absolute;
-    top: -11px;
-    left: 5px;
-    width: 24px;
-    height: 8px;
-    background: #777;
-    border-radius: 8px;
   }
 
   .window {
@@ -123,20 +160,30 @@
     border-radius: 50%;
     border: 5px solid #111;
     box-shadow: 0 8px 14px rgba(0,0,0,0.35);
+    z-index: 3;
+    animation: rotateWheel 2s linear infinite;
   }
 
-  .wheel.left {
-    left: 48px;
+  @keyframes rotateWheel {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
-  .wheel.right {
-    right: 48px;
-  }
+  .wheel.left { left: 48px; }
+  .wheel.right { right: 48px; }
 </style>
 </head>
 
 <body>
   <div class="vehicle">
+    <!-- حاوية الدخان -->
+    <div class="smoke-container">
+      <div class="smoke"></div>
+      <div class="smoke"></div>
+      <div class="smoke"></div>
+      <div class="smoke"></div> <!-- إضافة جزئ إضافي لكثافة أعلى -->
+    </div>
+
     <div class="pipe"></div>
 
     <div class="cabin">

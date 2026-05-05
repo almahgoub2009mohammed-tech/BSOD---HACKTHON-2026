@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated IoT Cleaning System | الابتكار المغناطيسي</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --bg-dark: #0a0b10;
+            --card-bg: #161b22;
+            --text-color: #e6edf3;
+            --accent-color: #58a6ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: radial-gradient(circle at center, #1a2a44 0%, #0a0b10 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.2;
+        }
+
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            background: linear-gradient(to right, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #8b949e;
+            max-width: 800px;
+        }
+
+        /* Floating Animation */
+        .float-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Sections Styling */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        /* Components Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #30363d;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+        }
+
+        .card h3 {
+            color: var(--primary-glow);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Workflow Timeline */
+        .workflow {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 50px 15px 15px 50px;
+            border-right: 5px solid var(--secondary-glow);
+        }
+
+        .step-num {
+            background: var(--secondary-glow);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-left: 20px;
+            flex-shrink: 0;
+        }
+
+        /* IoT & Software Glow */
+        .software-box {
+            background: linear-gradient(45deg, #1e1e1e, #2d2d2d);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 4px solid #f1c40f;
+        }
+
+        .code-snippet {
+            background: #000;
+            color: #00ff00;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Innovation Badge */
+        .innovation-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .badge {
+            background: rgba(88, 166, 255, 0.1);
+            border: 2px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #010409;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+        }
+
+        .highlight { color: var(--primary-glow); font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header>
+        <div class="float-icon">🤖</div>
+        <h1 class="hero-title">Automated IoT Cleaning System</h1>
+        <h2 class="hero-subtitle">الجيل القادم من أنظمة التنظيف الذكية باستخدام الموائع المغناطيسية و IoT</h2>
+    </header>
+
+    <!-- Hardware Section -->
+    <section id="hardware">
+        <center><h2 class="section-title">مكونات النظام (Hardware)</h2></center>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Pump & Nozzle</h3>
+                <p>مضخة عالية الضغط متصلة برشاشات دقيقة لضمان توزيع السائل المغناطيسي بشكل متساوي على السطح.</p>
+            </div>
+            <div class="card">
+                <h3>Electromagnet</h3>
+                <p>قلب الابتكار: مغناطيس كهربائي يتم التحكم فيه برمجياً لتوجيه وجمع السائل بعد عملية التنظيف.</p>
+            </div>
+            <div class="card">
+                <h3>Vacuum System</h3>
+                <p>شفاط مخصص لسحب البقايا النهائية وضمان جفاف السطح بنسبة 100%.</p>
+            </div>
+            <div class="card">
+                <h3>Robot / Rail</h3>
+                <p>نظام حركة ميكانيكي (Moving Rail) يضمن وصول النظام لجميع زوايا اللوح المستهدف.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software & IoT Section -->
+    <section style="background: #0d1117;">
+        <center><h2 class="section-title">الذكاء البرمجي و IoT</h2></center>
+        <div class="software-box">
+            <div class="grid-container">
+                <div>
+                    <h3>Microcontroller: <span class="highlight">ESP32</span></h3>
+                    <p>العقل المدبر للنظام، يدعم الاتصال بشبكة Wi-Fi للتحكم عن بُعد ومعالجة الأوامر اللحظية.</p>
+                    <div class="code-snippet">
+                        // VS Code Snippet <br>
+                        void startCleaningCycle() { <br>
+                        &nbsp;&nbsp;digitalWrite(PUMP_PIN, HIGH); <br>
+                        &nbsp;&nbsp;Serial.println("System Running..."); <br>
+                        }
+                    </div>
+                </div>
+                <div>
+                    <h3>تطبيق الموبايل (IoT Features)</h3>
+                    <ul>
+                        <li>📱 تشغيل وإيقاف النظام بضغطة واحدة.</li>
+                        <li>📊 مراقبة حالة السائل ومستوى البطارية.</li>
+                        <li>📅 جدولة عمليات التنظيف (Daily/Weekly).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section>
+        <center><h2 class="section-title">دورة عمل النظام (Workflow)</h2></center>
+        <div class="workflow">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div>
+                    <h3>بدء التشغيل</h3>
+                    <p>يستقبل الـ ESP32 أمراً عبر الإنترنت ويبدأ في معايرة الحساسات.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div>
+                    <h3>ضخ السائل المغناطيسي</h3>
+                    <p>يتم رش السائل الذي يلتقط ذرات الغبار والأتربة بقوة الالتصاق الجزيئي.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div>
+                    <h3>التجميع المغناطيسي</h3>
+                    <p>يعمل المغناطيس الكهربائي على سحب السائل (المحمل بالأتربة) إلى نقطة التجميع.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div>
+                    <h3>الشفط والإنهاء</h3>
+                    <p>يعمل الشفاط لإزالة أي بقايا، ثم يعود النظام لوضع الاستعداد.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section style="background: linear-gradient(180deg, #0a0b10 0%, #1a2a44 100%);">
+        <center><h2 class="section-title">لماذا هذا النظام مبتكر؟</h2></center>
+        <div class="innovation-grid">
+            <div class="badge">
+                <span style="font-size: 2rem;">♻️</span>
+                <p>سائل مغناطيسي قابل لإعادة التدوير</p>
+            </div>
+            <div class="badge">
+                <span style="font-size: 2rem;">💧</span>
+                <p>توفير استهلاك المياه بنسبة 95%</p>
+            </div>
+            <div class="badge">
+                <span style="font-size: 2rem;">🤖</span>
+                <p>تدخل بشري معدوم تماماً</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>مشروع: <strong>Automated IoT Cleaning System using Magnetic Fluid</strong></p>
+        <p>تم التصميم بكل فخر لتمثيل الرؤية المستقبلية للتكنولوجيا.</p>
+    </footer>
+
+</body>
+</html>
