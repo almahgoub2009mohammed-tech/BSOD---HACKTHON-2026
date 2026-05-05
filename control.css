@@ -123,13 +123,20 @@ nav a:hover{
   0 0 20px #00c3ff66,
   0 0 40px #7a00ff66;
 
-  transition: 0.4s;
+  transition: transform 0.2s ease,
+box-shadow 0.4s ease;
 }
 
 .btn:hover{
   transform: scale(1.08);
 
+
+
   box-shadow:
   0 0 30px #00c3ff,
   0 0 60px #7a00ff;
+}
+
+  .btn:active{
+  transform: scale(0.9);
 }
